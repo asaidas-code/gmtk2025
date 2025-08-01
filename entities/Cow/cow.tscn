@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ebr1jpqe2bso"]
+
+[ext_resource type="Script" uid="uid://cmk1gg52pahgl" path="res://entities/Cow/cow.gd" id="1_nuh3y"]
+
+[node name="Cow" type="Node3D"]
+script = ExtResource("1_nuh3y")
