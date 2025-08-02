@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2v2lrhp8u1p"]
+
+[ext_resource type="PackedScene" uid="uid://s4ncws2mpvs2" path="res://models/cow.fbx" id="1_8s1eh"]
+[ext_resource type="Shader" uid="uid://btrko1plpdbwi" path="res://shaders/cow.tres" id="2_fhr5k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bxxqe"]
+render_priority = 0
+shader = ExtResource("2_fhr5k")
+
+[node name="cow" instance=ExtResource("1_8s1eh")]
+
+[node name="Cow2_001" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_bxxqe")

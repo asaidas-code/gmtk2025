@@ -23,35 +23,35 @@ var moove_direction: Vector3 = Vector3.ZERO
 # ---
 
 func _init() -> void:
-    hear_area.body_entered.connect(self._on_hear)
-    hear_area.body_exited.connect(self._on_stop_hearing)
+	hear_area.body_entered.connect(self._on_hear)
+	hear_area.body_exited.connect(self._on_stop_hearing)
 
 func _process(delta: float) -> void:
-    if self.can_hear_player:
-        self.moove_direction = (
-            self.position - GameService.get_player_position()
-        ).normalized()
+	if self.can_hear_player:
+		self.moove_direction = (
+			self.position - GameService.get_player_position()
+		).normalized()
 
-    self.moove(self.moove_direction * self.moove_speed * delta)
+	self.moove(self.moove_direction * self.moove_speed * delta)
 
 # ---
 
 func _on_hear(body: Node3D):
-    match GameService.identify_entity(body):
-        GameService.EntityType.PLAYER:
-            self.can_hear_player = true
+	match GameService.identify_entity(body):
+		GameService.EntityType.PLAYER:
+			self.can_hear_player = true
 
 func _on_stop_hearing(body: Node3D):
-    match GameService.identify_entity(body):
-        GameService.EntityType.PLAYER:
-            self.can_hear_player = false
+	match GameService.identify_entity(body):
+		GameService.EntityType.PLAYER:
+			self.can_hear_player = false
 
 # ---
 
 func moo():
-    pass
+	pass
 
 func moove(amt: Vector3):
-    if amt == Vector3.ZERO:
-        return
-    self.position += amt
+	if amt == Vector3.ZERO:
+		return
+	self.position += amt
